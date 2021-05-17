@@ -1,0 +1,19 @@
+<p>
+  I'm in a <em>view</em>!
+</p>
+
+<%= Time.now %>
+
+<% @recipes.each do |recipe| %>
+  <li>
+    <%= recipe.name %>
+    <%= recipe.description %>
+    <%= recipe.rating %>
+    <%= recipe.prep_time %>
+  </li>
+<% end %>
+
+<a href = http://localhost:4567/new>
+Create a new recipe!
+</a>
+
