@@ -22,6 +22,11 @@ get '/new' do
   erb :new
 end
 
+get '/recipe/:id/delete' do
+  Cookbook.new('recipes.csv').remove_recipe(params[:id].to_i - 1)
+  redirect '/'
+end
+
 post '/create' do
   recipe = Recipe.new(params[:name], params[:description], params[:rating], params[:prep_time])
   Cookbook.new('recipes.csv').add_recipe(recipe)
